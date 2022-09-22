@@ -1,7 +1,10 @@
+import 'package:demo/components/buttons/big_button.dart';
 import 'package:demo/views/information.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../components/whiteSpace/white_space.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -28,9 +31,7 @@ class Home extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(
-                  height: 20,
-                ),
+                vh(20),
                 Text(
                   'ID',
                   textAlign: TextAlign.left,
@@ -39,9 +40,9 @@ class Home extends StatelessWidget {
                       fontSize: 24,
                       color: Colors.black),
                 ),
-                const SizedBox(height: 30),
+                vh(30),
                 Image.asset('assets/images/pngs/demoProfPix.png'),
-                const SizedBox(height: 30),
+                vh(30),
                 Text(
                   'BENSON',
                   textAlign: TextAlign.left,
@@ -50,7 +51,7 @@ class Home extends StatelessWidget {
                       fontSize: 42,
                       color: Colors.black),
                 ),
-                const SizedBox(height: 50),
+                vh(50),
                 SizedBox(
                   width: Get.width * 0.9,
                   child: Text(
@@ -62,26 +63,9 @@ class Home extends StatelessWidget {
                         color: Colors.black),
                   ),
                 ),
-                const SizedBox(height: 50),
-                SizedBox(
-                  width: Get.width,
-                  height: 60,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Get.to(()=>const Information(), transition: Transition.rightToLeft, duration: const Duration(seconds: 1));
-                    },
-                    style: ElevatedButton.styleFrom(
-                        shadowColor: Colors.transparent,
-                    primary: const Color(0xff0069ff)),
-                    child: Text(
-                      'Next page',
-                      style: GoogleFonts.montserrat(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700),
-                    ),
-                  ),
-                ),
+                 vh(50),
+               bigButton((){ Get.to(()=>const Information(), transition: Transition.rightToLeft, duration: const Duration(seconds: 1));
+               }, 'Next Page'),
                 const SizedBox(height: 30),
               ],
             ),

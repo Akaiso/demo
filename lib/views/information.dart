@@ -1,7 +1,8 @@
+import 'package:demo/colors/colors.dart';
+import 'package:demo/components/buttons/big_button.dart';
+import 'package:demo/components/whiteSpace/white_space.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Information extends StatelessWidget {
@@ -18,7 +19,7 @@ class Information extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 30),
+                vh(30),
                 CircleAvatar(
                   radius: 40,
                   backgroundColor: Colors.white,
@@ -28,7 +29,7 @@ class Information extends StatelessWidget {
                   children: [
                     const CircleAvatar(
                       radius: 5,
-                      backgroundColor: Color(0xff0069ff),
+                      backgroundColor: kBlue,
                     ),
                     const SizedBox(width: 5),
                     Text(
@@ -40,8 +41,8 @@ class Information extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 90),
-                Container(
+                vh(90),
+                SizedBox(
                   width: Get.width * 0.9,
                   child: RichText(
                     text: TextSpan(
@@ -56,28 +57,28 @@ class Information extends StatelessWidget {
                             style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 42,
-                                color: const Color(0xff0069ff)),
+                                color:kBlue),
                           )
                         ]),
                   ),
                 ),
-                const SizedBox(height: 20),
+                vh(20),
                 Text(
                   'We build beautiful mobile applications that are user and pocket friendly.',
                   style: GoogleFonts.montserrat(
-                      color: const Color(0xff7e919e),
+                      color: kGrey,
                       fontSize: 14,
                       fontWeight: FontWeight.w600),
                 ),
-                const SizedBox(height: 40),
+                vh(40),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.mail_outline,
                       size: 20,
                       color: Colors.black,
                     ),
-                    SizedBox(width: 10),
+                    hh(10),
                     Text(
                       'akaisobenson@gmail.com',
                       style: GoogleFonts.montserrat(
@@ -87,7 +88,7 @@ class Information extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 6),
+                vh(6),
                 Container(
                   width: Get.width,
                   height: 1.5,
@@ -99,12 +100,12 @@ class Information extends StatelessWidget {
                 Row(
                   children: [
                     //  SvgPicture.asset('assets/images/svgs/bi_telephone.svg'),
-                    Icon(
+                    const Icon(
                       Icons.phone,
                       size: 20,
                       color: Colors.black,
                     ),
-                    SizedBox(width: 10),
+                    hh(10),
 
                     Text(
                       '08086652587',
@@ -115,42 +116,24 @@ class Information extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 6),
+                vh(6),
                 Container(
                   width: Get.width,
                   height: 1.5,
                   color: Colors.black,
                 ),
-                const SizedBox(height: 13),
+                vh(13),
                 Text(
                   'Contact us today',
                   style: GoogleFonts.montserrat(
-                      color: const Color(0xff0069ff),
+                      color: kBlue,
                       fontSize: 14,
                       fontWeight: FontWeight.w600),
                 ),
-                const SizedBox(
-                  height: 40,
-                ),
-                SizedBox(
-                  width: Get.width,
-                  height: 60,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Get.back();
-                    },
-                    style: ElevatedButton.styleFrom(
-                        shadowColor: Colors.transparent,
-                        primary: const Color(0xff0069ff)),
-                    child: Text(
-                      'Back',
-                      style: GoogleFonts.montserrat(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700),
-                    ),
-                  ),
-                ),
+                vh(40),
+                bigButton(() {
+                  Get.back();
+                }, 'Back')
               ],
             ),
           ),
