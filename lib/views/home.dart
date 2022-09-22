@@ -1,3 +1,4 @@
+import 'package:demo/views/information.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -66,9 +67,12 @@ class Home extends StatelessWidget {
                   width: Get.width,
                   height: 60,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(()=>const Information(), transition: Transition.rightToLeft, duration: const Duration(seconds: 1));
+                    },
                     style: ElevatedButton.styleFrom(
-                        shadowColor: Colors.transparent),
+                        shadowColor: Colors.transparent,
+                    primary: const Color(0xff0069ff)),
                     child: Text(
                       'Next page',
                       style: GoogleFonts.montserrat(
