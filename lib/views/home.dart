@@ -45,7 +45,6 @@ class Home extends StatelessWidget {
                 vh(30),
                 Text(
                   'BENSON',
-                  textAlign: TextAlign.left,
                   style: GoogleFonts.montserrat(
                       fontWeight: FontWeight.w700,
                       fontSize: 42,
@@ -55,7 +54,7 @@ class Home extends StatelessWidget {
                 SizedBox(
                   width: Get.width * 0.9,
                   child: Text(
-                    'FLUTTER & DART DEVELOPER WITH GETX',
+                    'FLUTTER & DART DEVELOPER WITH GETx',
                     textAlign: TextAlign.left,
                     style: GoogleFonts.montserrat(
                         fontWeight: FontWeight.w300,
